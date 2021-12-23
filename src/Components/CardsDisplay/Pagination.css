@@ -1,0 +1,18 @@
+.pagination-list {
+  display: flex;
+  list-style: none;
+}
+
+.pagination-list li + li {
+  margin-left: 1rem;
+}
+
+.pagination-list__item--active {
+  background: none;
+  font-weight: bold;
+  border: none;
+}
+
+.pagination-list__item--active:focus {
+  outline: none;
+}

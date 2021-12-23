@@ -16,13 +16,12 @@ const Hero = () => {
         numquam eligendi ipsa saepe. Ut vel ipsa distinctio dolores, quo quod.
         Nulla, assumenda?
       </p>
-      <form>
+      <form className="input-group mb-3">
         <label htmlFor="">
-          Nome:
-          <input></input>
+          <input placeholder="Nome de um Jogo" className="form-control"></input>
         </label>
         <label htmlFor="">
-          <button>Procurar</button>
+          <button className="btn btn-primary">Procurar</button>
         </label>
       </form>
     </article>

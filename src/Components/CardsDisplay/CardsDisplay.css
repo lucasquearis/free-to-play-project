@@ -1,7 +1,18 @@
 .display-cards-body {
-  height: 70vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: rgb(235, 235, 235);
+}
+
+.cards-list {
+  list-style: none;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+}
+
+.card-container {
+  text-align: center;
 }

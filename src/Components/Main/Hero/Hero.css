@@ -5,10 +5,15 @@
   align-items: center;
   height: 55%;
   width: 70vw;
-  background-color: red;
+  background-color: rgb(214, 214, 214);
 }
 
 .text-hero {
   width: 95%;
   font-size: 20px;
+}
+
+.input-group {
+  justify-content: center;
+  width: 20vm;
 }

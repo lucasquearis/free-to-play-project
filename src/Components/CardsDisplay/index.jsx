@@ -1,24 +1,35 @@
-import React, { useEffect, useState } from "react";
-import { fetchByPopularity } from "../../data/fetchByPopularity";
+import React, { useContext, useState } from "react";
+import CardsContext from "../../context/CardsContext";
 import "./CardsDisplay.css";
+import Pagination from "./Pagination";
+
+const LIMIT = 6;
 
 const CardsDisplay = () => {
-  const [resultApi, setResultApi] = useState([]);
-  useEffect(() => {
-    const resolveApi = async () => {
-      const data = await fetchByPopularity();
-      setResultApi(data);
-    };
-    resolveApi();
-  }, []);
-
-  useEffect(() => {
-    console.log(resultApi);
-  }, [resultApi]);
-
+  const [offset, setOfSet] = useState(0);
+  const { resultApi } = useContext(CardsContext);
   return (
     <div className="display-cards-body">
-      <h1>Eu sou o DisplayCards</h1>
+      <ul className="cards-list">
+        {resultApi.map((item, index) => {
+          if (index >= offset && index < offset + LIMIT) {
+            return (
+              <li className="card-container" key={index}>
+                <h1>{item.title}</h1>
+                <img alt={item.title} src={item.thumbnail} />
+                <p>Gênero: {item.genre}</p>
+                <p>Plataforma: {item.platform}</p>
+              </li>
+            );
+          }
+        })}
+      </ul>
+      <Pagination
+        limit={LIMIT}
+        total={resultApi.length}
+        offset={offset}
+        setOfSet={setOfSet}
+      />
     </div>
   );
 };
