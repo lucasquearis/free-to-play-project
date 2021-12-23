@@ -19,7 +19,7 @@ const Pagination = ({ limit, total, offset, setOfSet }) => {
     <ul className="pagination-list">
       <li>
         <button
-          className="btn btn-primary"
+          className="btn btn-secondary"
           onClick={() => handleClick(currentPage - 1)}
           disabled={currentPage === 1}
         >
@@ -34,7 +34,7 @@ const Pagination = ({ limit, total, offset, setOfSet }) => {
               <li key={page}>
                 <button
                   className={
-                    page === currentPage ? "btn btn-primary" : "btn btn-light"
+                    page === currentPage ? "btn btn-secondary" : "btn btn-light"
                   }
                   onClick={() => handleClick(page)}
                 >
@@ -46,7 +46,7 @@ const Pagination = ({ limit, total, offset, setOfSet }) => {
         })}
       <li>
         <button
-          className="btn btn-primary"
+          className="btn btn-secondary"
           onClick={() => handleClick(currentPage + 1)}
           disabled={currentPage === totalPages}
         >

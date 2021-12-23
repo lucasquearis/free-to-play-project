@@ -1,19 +1,11 @@
 import React from 'react';
-import Header from './Components/Header';
-import Main from './Components/Main';
-import Footer from './Components/Footer'
-import CardsDisplay from './Components/CardsDisplay';
 import CardsProvider from './context/CardsProvider';
+import Home from './Pages/Home';
 
 function App() {
   return (
     <CardsProvider>
-      <div className="body-container">
-        <Header />
-        <Main />
-        <CardsDisplay />
-        <Footer />
-      </div>
+      <Home />
     </CardsProvider>
   );
 }

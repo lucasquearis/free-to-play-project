@@ -21,7 +21,7 @@ const Hero = () => {
           <input placeholder="Nome de um Jogo" className="form-control"></input>
         </label>
         <label htmlFor="">
-          <button className="btn btn-primary">Procurar</button>
+          <button className="btn btn-secondary">Procurar</button>
         </label>
       </form>
     </article>
