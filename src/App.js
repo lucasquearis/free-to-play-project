@@ -1,12 +1,16 @@
 import React from 'react';
 import Header from './Components/Header';
+import Main from './Components/Main';
+import Footer from './Components/Footer'
+import CardsDisplay from './Components/CardsDisplay';
 
 function App() {
   return (
     <div className="body-container">
       <Header />
-      <h1>Eu sou o Main</h1>
-      <h1>Eu sou o Footer</h1>
+      <Main />
+      <CardsDisplay />
+      <Footer />
     </div>
   );
 }
