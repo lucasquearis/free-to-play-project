@@ -2,12 +2,12 @@
   background-color: rgb(185, 185, 185);
   display: flex;
   justify-content: center;
-  height: 150px;
+  height: auto;
   align-items: center;
 }
 
 .header-title {
-  color: rgb(54, 143, 113);
-  font-size: 100px;
-  font-family: "Comfortaa", cursive;
+  color: white;
+  font-size: 50px;
+  font-family: "Righteous", cursive;
 }

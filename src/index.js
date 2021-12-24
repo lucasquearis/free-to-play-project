@@ -6,9 +6,11 @@ import Game from './Pages/Game';
 
 const rootElement = document.getElementById("root");
 render(
-<BrowserRouter>
-  <Routes>
-    <Route path="/" element={<App />} />
-    <Route path="/:id" element={<Game />} />
-  </Routes>
-</BrowserRouter>, rootElement)
+<React.StrictMode>
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="/:id" element={<Game />} />
+    </Routes>
+  </BrowserRouter>
+</React.StrictMode>, rootElement)

@@ -7,10 +7,3 @@
   align-content: space-between;
   row-gap: 30px;
 }
-
-.main-filters {
-  text-align: center;
-  background-color: black;
-  width: 70vw;
-  height: 20%;
-}

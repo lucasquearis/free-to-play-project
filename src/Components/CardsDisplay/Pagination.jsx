@@ -6,13 +6,13 @@ import "./Pagination.css";
 const MAX_ITEMS = 9;
 const MAX_LEFT = (MAX_ITEMS - 1) / 2;
 
-const Pagination = ({ limit, total, offset, setOfSet }) => {
+const Pagination = ({ limit, total, offset, setOffSet }) => {
   const currentPage = offset ? offset / limit + 1 : 1;
   const totalPages = Math.ceil(total / limit);
   const firstPage = Math.max(currentPage - MAX_LEFT, 1);
 
   const handleClick = (page) => {
-    setOfSet((page - 1) * limit);
+    setOffSet((page - 1) * limit);
   };
 
   return (
@@ -23,7 +23,7 @@ const Pagination = ({ limit, total, offset, setOfSet }) => {
           onClick={() => handleClick(currentPage - 1)}
           disabled={currentPage === 1}
         >
-          Anterior
+          Previous
         </button>
       </li>
       {Array.from({ length: Math.min(MAX_ITEMS, totalPages) })
@@ -50,7 +50,7 @@ const Pagination = ({ limit, total, offset, setOfSet }) => {
           onClick={() => handleClick(currentPage + 1)}
           disabled={currentPage === totalPages}
         >
-          Próximo
+          Next
         </button>
       </li>
     </ul>
@@ -61,7 +61,7 @@ Pagination.propTypes = {
   limit: PropTypes.number,
   total: PropTypes.number,
   offset: PropTypes.number,
-  setOfSet: PropTypes.func,
+  setOffSet: PropTypes.func,
 }.isRequired;
 
 export default Pagination;

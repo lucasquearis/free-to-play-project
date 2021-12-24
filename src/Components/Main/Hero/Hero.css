@@ -1,16 +1,24 @@
 .main-hero {
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   height: 55%;
   width: 70vw;
-  background-color: rgb(214, 214, 214);
+  background-image: url("../../../images/Hero/game.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 13px 30px rgb(0 0 0 / 0.4);
+  margin: 2vh 0;
+  border-radius: 10px;
 }
 
 .text-hero {
-  width: 95%;
-  font-size: 20px;
+  font-size: 70px;
+  color: white;
+  text-shadow: 10px 5px 5px black;
+  font-family: "Righteous", cursive;
 }
 
 .input-group {

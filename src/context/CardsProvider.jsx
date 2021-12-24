@@ -5,6 +5,13 @@ import CardsContext from "./CardsContext";
 
 const CardsProvider = ({ children }) => {
   const [resultApi, setResultApi] = useState([]);
+  const [inputFilter, setInputFilter] = useState("");
+  const [filteredByName, setFilteredByName] = useState([]);
+  const [filteredByFilters, setFilteredByFilters] = useState(filteredByName);
+  const [offset, setOffSet] = useState(0);
+  const [platformInput, setPlatformInput] = useState("All of them");
+  const [genreInput, setGenreInput] = useState("All of them");
+
   useEffect(() => {
     const resolveApi = async () => {
       const data = await fetchByPopularity();
@@ -13,8 +20,45 @@ const CardsProvider = ({ children }) => {
     resolveApi();
   }, []);
 
+  useEffect(() => {
+    const cloneApi = [...resultApi];
+    const filteredResult = cloneApi.filter((game) =>
+      game.title.toLowerCase().includes(inputFilter.toLowerCase())
+    );
+    setFilteredByName(filteredResult);
+    setFilteredByFilters(filteredResult);
+  }, [inputFilter, resultApi]);
+
+  useEffect(() => {
+    const cloneFilteredResults = [...filteredByName];
+    const filteredResult = cloneFilteredResults
+      .filter((game) => {
+        if (platformInput !== "All of them") {
+          return game.platform === platformInput;
+        }
+        return true;
+      })
+      .filter((game) => {
+        if (genreInput !== "All of them") {
+          return game.genre === genreInput;
+        }
+        return true;
+      });
+    console.log(filteredResult);
+    setFilteredByFilters(filteredResult);
+  }, [platformInput, genreInput]);
   const context = {
     resultApi,
+    inputFilter,
+    setInputFilter,
+    filteredByName,
+    offset,
+    setOffSet,
+    setPlatformInput,
+    setGenreInput,
+    platformInput,
+    genreInput,
+    filteredByFilters,
   };
   return (
     <CardsContext.Provider value={context}>{children}</CardsContext.Provider>
