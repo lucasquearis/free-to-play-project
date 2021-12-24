@@ -26,7 +26,8 @@
   flex-wrap: wrap;
   display: flex;
   justify-content: space-around;
-  max-width: 75vw;
+  max-width: 80%;
+  padding: 0px;
 }
 
 .card-container {
@@ -37,7 +38,7 @@
   align-items: center;
   height: 400px;
   width: 300px;
-  margin: 20px;
+  margin: 25px 40px;
   display: flex;
   flex-direction: column;
   text-align: center;
