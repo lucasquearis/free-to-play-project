@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   list-style: none;
+  padding: 0px;
 }
 
 .pagination-list li + li {
