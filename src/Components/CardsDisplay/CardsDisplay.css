@@ -101,4 +101,10 @@
     align-items: center;
     text-align: center;
   }
+
+  .sad-penguin {
+    width: 100vw;
+    max-height: 270px;
+    max-width: 480px;
+  }
 }

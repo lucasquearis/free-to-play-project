@@ -48,12 +48,13 @@ const CardsDisplay = () => {
           <h1>
             Desculpe, não consegui achar esse jogo, que tal tentar mais uma vez?
           </h1>
-          <iframe
+          <img
             className="sad-penguin"
+            alt="sad penguin"
             src={sadPenguin}
             width="480"
             height="270"
-          ></iframe>
+          ></img>
         </div>
         <Pagination
           limit={LIMIT}
