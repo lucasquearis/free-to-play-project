@@ -1,27 +1,58 @@
-.main-hero {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  height: 55%;
-  width: 70vw;
-  background-image: url("../../../images/Hero/game.jpg");
-  background-size: cover;
-  background-position: center;
-  background-position-y: top;
-  box-shadow: 0 13px 30px rgb(0 0 0 / 0.4);
-  margin: 2vh 0;
-  border-radius: 10px;
+@media only screen and (min-width: 950px) {
+  .main-hero {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 55%;
+    width: 70vw;
+    background-image: url("../../../images/Hero/game.jpg");
+    background-color: rgb(204, 204, 204);
+    background-size: cover;
+    background-position: center;
+    background-position-y: top;
+    box-shadow: 0 13px 30px rgb(0 0 0 / 0.4);
+    margin: 2vh 0;
+    border-radius: 10px;
+  }
+
+  .text-hero {
+    font-size: 70px;
+    color: white;
+    text-shadow: 10px 5px 5px black;
+    font-family: "Righteous", cursive;
+  }
+
+  .input-group {
+    justify-content: center;
+  }
 }
 
-.text-hero {
-  font-size: 70px;
-  color: white;
-  text-shadow: 10px 5px 5px black;
-  font-family: "Righteous", cursive;
-}
+@media only screen and (max-width: 949px) {
+  .main-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url("../../../images/Hero/game.jpg");
+    background-position-x: center;
+    background-size: cover;
+    background-color: rgb(204, 204, 204);
+    height: 50%;
+    width: 100vw;
+    border-radius: 5px;
+  }
 
-.input-group {
-  justify-content: center;
+  .text-hero {
+    font-size: 30px;
+    color: white;
+    text-shadow: 10px 5px 5px black;
+    font-family: "Righteous", cursive;
+  }
+
+  .input-group {
+    justify-content: center;
+    width: auto;
+  }
 }

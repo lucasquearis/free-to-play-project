@@ -1,9 +1,17 @@
-.main-body {
-  height: 70vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  align-content: space-between;
-  row-gap: 30px;
+@media only screen and (min-width: 950px) {
+  .main-body {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-content: space-between;
+    row-gap: 30px;
+  }
+}
+
+@media only screen and (max-width: 949px) {
+  .main-body {
+    height: 40vh;
+  }
 }
