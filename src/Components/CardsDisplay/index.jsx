@@ -11,7 +11,7 @@ const CardsDisplay = () => {
   const { filteredByFilters, offset, setOffSet } = useContext(CardsContext);
   return (
     (filteredByFilters.length >= 1 && (
-      <div>
+      <>
         <div className="display-cards-body">
           <ul className="cards-list">
             {filteredByFilters.map((item, index) => {
@@ -41,7 +41,7 @@ const CardsDisplay = () => {
           offset={offset}
           setOffSet={setOffSet}
         />
-      </div>
+      </>
     )) || (
       <div>
         <div className="not-found-game">
