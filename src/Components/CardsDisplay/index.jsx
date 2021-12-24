@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import CardsContext from "../../context/CardsContext";
 import "./CardsDisplay.css";
-import Pagination from "./Pagination";
-import sadPenguin from "../../images/notFoundGif/sadPenguin.gif";
+import Pagination from "./Pagination/Pagination";
+import Cardlist from "./CardList";
+import NotFoundGame from "./NotFoundGame";
 
 const LIMIT = 6;
 
@@ -13,27 +13,7 @@ const CardsDisplay = () => {
     (filteredByFilters.length >= 1 && (
       <>
         <div className="display-cards-body">
-          <ul className="cards-list">
-            {filteredByFilters.map((item, index) => {
-              if (index >= offset && index < offset + LIMIT) {
-                return (
-                  <li className="card-container" key={index}>
-                    <h1>{item.title}</h1>
-                    <img
-                      className="card-image"
-                      alt={item.title}
-                      src={item.thumbnail}
-                    />
-                    <p>Gender: {item.genre}</p>
-                    <p>Platform: {item.platform}</p>
-                    <Link to={`/${item.id}`}>
-                      <button className="btn btn-info">More Infos</button>
-                    </Link>
-                  </li>
-                );
-              }
-            })}
-          </ul>
+          <Cardlist />
         </div>
         <Pagination
           limit={LIMIT}
@@ -44,18 +24,7 @@ const CardsDisplay = () => {
       </>
     )) || (
       <div>
-        <div className="not-found-game">
-          <h1>
-            Desculpe, não consegui achar esse jogo, que tal tentar mais uma vez?
-          </h1>
-          <img
-            className="sad-penguin"
-            alt="sad penguin"
-            src={sadPenguin}
-            width="480"
-            height="270"
-          ></img>
-        </div>
+        <NotFoundGame />
         <Pagination
           limit={LIMIT}
           total={filteredByFilters.length}

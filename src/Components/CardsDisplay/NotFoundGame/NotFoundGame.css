@@ -1,0 +1,11 @@
+@media only screen and (min-width: 950px) {
+  .not-found-game {
+    width: 100vw;
+    height: 500px;
+    background-color: #b9b9b9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
