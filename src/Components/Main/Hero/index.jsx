@@ -18,7 +18,7 @@ const Hero = () => {
 
   return (
     <article className="main-hero">
-      <p className="text-hero">Find your games</p>
+      <p className="text-hero">Find your free games</p>
       <form className="input-group mb-3">
         <label htmlFor="">
           <input

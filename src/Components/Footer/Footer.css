@@ -5,3 +5,7 @@ footer {
   gap: 0px 10px;
   background-color: rgb(224, 224, 224);
 }
+
+.form-select {
+  width: 255px;
+}
