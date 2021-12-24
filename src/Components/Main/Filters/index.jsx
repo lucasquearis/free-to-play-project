@@ -42,8 +42,6 @@ const Filters = () => {
     optionsFormat();
   }, [filteredByName]);
 
-  // console.log(genreInput, platformInput, genreOptions);
-
   return (
     <article className="main-filters">
       <label>
@@ -55,7 +53,7 @@ const Filters = () => {
           value={platformInput}
         >
           <option>All of them</option>
-          {platformOptions.map((game, index) => (
+          {platformOptions.sort().map((game, index) => (
             <option key={index}>{game}</option>
           ))}
         </select>
@@ -69,9 +67,9 @@ const Filters = () => {
           value={genreInput}
         >
           <option>All of them</option>
-          {genreOptions.map((game, index) => (
-            <option key={index}>{game}</option>
-          ))}
+          {genreOptions.sort().map((game, index) => {
+            return <option key={index}>{game}</option>;
+          })}
         </select>
       </label>
     </article>

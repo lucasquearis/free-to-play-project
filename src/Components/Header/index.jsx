@@ -4,7 +4,7 @@ import "./Header.css";
 const Header = () => {
   return (
     <div className="header-body">
-      <h1 className="header-title">Free to play Games!</h1>
+      <h1 className="header-title">Here you find your free game!</h1>
     </div>
   );
 };

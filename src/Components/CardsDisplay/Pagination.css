@@ -1,5 +1,8 @@
 .pagination-list {
+  height: 10vh;
+  align-items: center;
   display: flex;
+  justify-content: center;
   list-style: none;
 }
 
@@ -15,4 +18,12 @@
 
 .pagination-list__item--active:focus {
   outline: none;
+}
+
+.previous-next {
+  width: 100px;
+}
+
+.page-number-btn {
+  width: 45px;
 }

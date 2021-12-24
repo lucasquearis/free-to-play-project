@@ -44,7 +44,6 @@ const CardsProvider = ({ children }) => {
         }
         return true;
       });
-    console.log(filteredResult);
     setFilteredByFilters(filteredResult);
   }, [platformInput, genreInput]);
   const context = {
