@@ -1,29 +1,14 @@
 import React, { useState, useContext, useEffect } from "react";
 import CardsContext from "../../../context/CardsContext";
 import "./Filters.css";
+import SelectFilter from "./SelectFilter";
 
 const Filters = () => {
-  const {
-    filteredByName,
-    setGenreInput,
-    setPlatformInput,
-    genreInput,
-    platformInput,
-  } = useContext(CardsContext);
+  const { filteredByName, genreInput, platformInput } =
+    useContext(CardsContext);
 
   const [platformOptions, setPlatformOptions] = useState([]);
   const [genreOptions, setGenreOptions] = useState([]);
-
-  const handleChange = ({ name, value }) => {
-    switch (name) {
-      case "platform":
-        setPlatformInput(value);
-        break;
-      case "genre":
-        setGenreInput(value);
-        break;
-    }
-  };
 
   useEffect(() => {
     const optionsFormat = () => {
@@ -44,34 +29,18 @@ const Filters = () => {
 
   return (
     <article className="main-filters">
-      <label>
-        Platform
-        <select
-          name="platform"
-          onChange={({ target }) => handleChange(target)}
-          className="form-select"
-          value={platformInput}
-        >
-          <option>All of them</option>
-          {platformOptions.sort().map((game, index) => (
-            <option key={index}>{game}</option>
-          ))}
-        </select>
-      </label>
-      <label>
-        Genre
-        <select
-          name="genre"
-          onChange={({ target }) => handleChange(target)}
-          className="form-select"
-          value={genreInput}
-        >
-          <option>All of them</option>
-          {genreOptions.sort().map((game, index) => {
-            return <option key={index}>{game}</option>;
-          })}
-        </select>
-      </label>
+      <SelectFilter
+        name="platform"
+        inputValue={platformInput}
+        options={platformOptions}
+        nameLabel="Platform"
+      />
+      <SelectFilter
+        name="genre"
+        inputValue={genreInput}
+        options={genreOptions}
+        nameLabel="Genre"
+      />
     </article>
   );
 };
