@@ -1,0 +1,21 @@
+.body-game {
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-card {
+  background-color: white;
+  width: 90vw;
+}
+
+.screenshot-list {
+  display: flex;
+  list-style: none;
+  padding: 0px;
+}
+
+.game-screenshot {
+  width: 500px;
+}
