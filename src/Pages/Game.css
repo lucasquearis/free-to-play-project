@@ -1,21 +1,103 @@
-.body-game {
-  background-color: red;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+@media only screen and (min-width: 950px) {
+  .body-game {
+    background-color: #b9b9b9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .body-game h1 {
+    text-align: center;
+    font-family: "Righteous", cursive;
+    font-size: 100px;
+    text-shadow: 1px 5px 5px black;
+  }
+
+  .game-card {
+    background-color: white;
+    height: max-content;
+    margin: 70px;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+    border-radius: 5px;
+  }
+
+  .game-settings {
+    background-color: white;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+    border-radius: 5px;
+    padding: 15px;
+    margin: 20px;
+    text-align: center;
+  }
+
+  .description-game {
+    max-width: 90%;
+  }
+
+  .carousel {
+    width: 100%;
+  }
+
+  .screenshot-list {
+    display: flex;
+    list-style: none;
+    padding: 0px;
+  }
+
+  .game-screenshot {
+    width: 500px;
+  }
 }
 
-.game-card {
-  background-color: white;
-  width: 90vw;
-}
+@media only screen and (max-width: 949px) {
+  .body-game {
+    background-color: #b9b9b9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 
-.screenshot-list {
-  display: flex;
-  list-style: none;
-  padding: 0px;
-}
+  .body-game h1 {
+    text-align: center;
+    font-family: "Righteous", cursive;
+    font-size: 50px;
+    text-shadow: 1px 5px 5px #b9b9b9;
+    padding: 10px 0px;
+  }
 
-.game-screenshot {
-  width: 500px;
+  .thumbnail-game {
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+    border-radius: 5px;
+    margin: 15px;
+  }
+
+  .game-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+    background-color: white;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+    border-radius: 5px;
+  }
+
+  .game-settings {
+    background-color: white;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+    border-radius: 5px;
+    padding: 15px;
+    margin: 20px;
+    text-align: center;
+  }
 }

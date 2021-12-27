@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchById } from "../data/fetchById";
 import "./Game.css";
+import Footer from "../Components/Footer";
+import Loading from "../Components/Loading";
 
 const Game = () => {
   const { id } = useParams();
@@ -20,12 +22,18 @@ const Game = () => {
       <div className="body-game">
         <div className="game-card">
           <h1>{resultApi.title}</h1>
-          <img alt={resultApi.title} src={resultApi.thumbnail} />
+          <img
+            className="thumbnail-game"
+            alt={resultApi.title}
+            src={resultApi.thumbnail}
+          />
           <p>Status: {resultApi.status}</p>
           <p>Gender: {resultApi.genre}</p>
           <p>Release Date: {resultApi.release_date}</p>
           <p>Developer Company: {resultApi.publisher}</p>
-          <p>Description: {resultApi.description}</p>
+          <p className="description-game">
+            Description: {resultApi.description}
+          </p>
           <a target="_blank" href={resultApi.game_url} rel="noreferrer">
             Game Site
           </a>
@@ -36,42 +44,36 @@ const Game = () => {
               data-bs-ride="carousel"
             >
               <div className="carousel-indicators">
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide-to="0"
-                  className="active"
-                  aria-current="true"
-                  aria-label="Slide 1"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide-to="1"
-                  aria-label="Slide 2"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide-to="2"
-                  aria-label="Slide 3"
-                ></button>
+                {resultApi.screenshots.map((_game, index) => {
+                  return (
+                    <button
+                      key={index}
+                      type="button"
+                      data-bs-target="#carouselExampleIndicators"
+                      data-bs-slide-to={index}
+                      className={index === 0 ? "active" : null}
+                      aria-current={index === 0 ? "true" : null}
+                      aria-label={`Slide ${index + 1}`}
+                    ></button>
+                  );
+                })}
               </div>
               <div className="carousel-inner">
-                {resultApi.screenshots.map((image, index) => {
-                  console.log(image.image);
+                {resultApi.screenshots.map((game, index) => {
                   return (
                     <div
+                      key={index}
                       className={
                         index === 0 ? "carousel-item active" : "carousel-item"
                       }
-                      key={image.id}
                     >
-                      <img
-                        className="d-block w-100"
-                        alt={`${resultApi.title} screenshots`}
-                        src={image.image}
-                      />
+                      <a target="_blank" href={game.image} rel="noreferrer">
+                        <img
+                          src={game.image}
+                          className="d-block w-100"
+                          alt={`screenshot ${game.image}`}
+                        />
+                      </a>
                     </div>
                   );
                 })}
@@ -106,8 +108,8 @@ const Game = () => {
           )}
         </div>
         {resultApi.minimum_system_requirements ? (
-          <div>
-            <h2>Minimum Settings</h2>
+          <div className="game-settings">
+            <h1>Minimum Settings</h1>
             <p>Video Card: {resultApi.minimum_system_requirements.graphics}</p>
             <p>Ram Memory: {resultApi.minimum_system_requirements.memory}</p>
             <p>Processor: {resultApi.minimum_system_requirements.processor}</p>
@@ -117,8 +119,9 @@ const Game = () => {
             </p>
           </div>
         ) : null}
+        <Footer />
       </div>
-    )) || <h1>Loading...</h1>
+    )) || <Loading />
   );
 };
 

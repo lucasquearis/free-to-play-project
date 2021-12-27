@@ -1,0 +1,10 @@
+.loading-body {
+  background-color: rgb(185, 185, 185);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+}
