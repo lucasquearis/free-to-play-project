@@ -10,6 +10,9 @@
     border-radius: 10px;
     box-shadow: 0 13px 30px rgb(0 0 0 / 0.4);
   }
+  .form-select {
+    width: 255px;
+  }
 }
 
 @media only screen and (max-width: 949px) {
