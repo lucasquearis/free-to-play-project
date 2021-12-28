@@ -9,7 +9,7 @@ const Footer = () => {
       desenvolvido por Lucas A. Santos
       <a
         target="_blank"
-        href="https://github.com/lucasquearis"
+        href="https://github.com/lucasquearis/free-to-play-project"
         rel="noreferrer"
       >
         <img width="20px" alt="github" src={githubIcon} />
